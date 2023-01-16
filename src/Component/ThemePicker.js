@@ -1,6 +1,6 @@
 import Event from "../Eventing/Event.js";
 import EventDispatcher from "../Eventing/EventDispatcher.js";
-import Settings from "../Settings.js";
+import Settings, { THEME } from "../Settings.js";
 import Utils from "../Utils.js";
 
 const template = document.createElement("template");
@@ -54,7 +54,7 @@ export class ThemePicker extends HTMLElement {
           name: themeName,
           color: Utils.rgba2hex(themeColor),
         };
-        Settings.set(Settings.THEME, theme);
+        Settings.set(THEME, theme);
         EventDispatcher.dispatch(Event.themeWasUpdated, theme);
       });
     });

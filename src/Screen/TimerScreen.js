@@ -11,6 +11,10 @@ export default class TimerScreen {
     this.timer = null;
   }
 
+  getClassesForMainElement = () => {
+    return ["responsive", "timer-screen"];
+  };
+
   render = () => {
     const randomScramble = Utils.randomScramble(20);
     const scrambleElement = document.createElement("component-scramble");
@@ -64,7 +68,9 @@ export default class TimerScreen {
 
         Solves.add({
           uuid: Utils.uuidv4(),
-          timeInMilliseconds: parseInt(timerElement.getAttribute('elapsed-time')),
+          timeInMilliseconds: parseInt(
+            timerElement.getAttribute("elapsed-time")
+          ),
           solvedOn: Date.now(),
           scramble: scrambleElement.getAttribute("algorithm"),
         });

@@ -36,11 +36,17 @@ export default class App {
       .add("", function () {
         const screen = new TimerScreen();
         that.mainElement.innerHTML = "";
+        that.mainElement.classList = "";
+
+        that.mainElement.classList.add(...screen.getClassesForMainElement());
         that.mainElement.appendChild(screen.render());
       })
       .add("solves", function () {
         const screen = new SolvesScreen();
         that.mainElement.innerHTML = "";
+        that.mainElement.classList = "";
+        
+        that.mainElement.classList.add(...screen.getClassesForMainElement());
         that.mainElement.appendChild(screen.render());
       })
       .check()

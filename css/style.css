@@ -18,3 +18,14 @@ body.fullscreen main component-scramble,
 body.fullscreen main component-scramble-visual {
     display: none;
 }
+
+main.responsive.timer-screen{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+main.responsive.solves-screen{
+    padding-top: 5rem;
+}
