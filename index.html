@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="logo512.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional Rubik's Cube Speedsolving/Training Timer" />
+  <link rel="apple-touch-icon" href="logo512.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link href="libraries/beercss/beer.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>csTimer Clone </title>
+</head>
+
+<body>
+  <nav class="left m l tiny-padding">
+    <a><img class="small" src="logo512.png"></a>
+    <a href="/#">
+      <i>timer</i>
+      <div>Home</div>
+    </a>
+    <a href="/#solves">
+      <i>list_alt</i>
+      <div>Solves</div>
+    </a>
+    <a href="/#stats">
+      <i>insights</i>
+      <div>Stats</div>
+    </a>
+    <a data-ui="#settings">
+      <i>settings</i>
+      <div>Settings</div>
+    </a>
+  </nav>
+  <nav class="bottom s">
+    <a href="/#">
+      <i>timer</i>
+      <div>Home</div>
+    </a>
+    <a href="/#solves">
+      <i>list_alt</i>
+      <div>Solves</div>
+    </a>
+    <a href="/#stats">
+      <i>insights</i>
+      <div>Stats</div>
+    </a>
+    <a data-ui="#settings">
+      <i>settings</i>
+      <div>Settings</div>
+    </a>
+  </nav>
+  <header class="responsive absolute surface">
+    <nav>
+      <div class="max">
+        <a class="s">
+          <img class="small" src="logo512.png">
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main class="responsive center-align middle-align">
+
+  </main>
+  <div class="modal right medium no-scroll" id="settings">
+    <header class="fixed">
+      <nav>
+        <button data-ui="#settings" class="transparent circle">
+          <i>close</i>
+        </button>
+        <h5 class="max">Settings</h5>
+      </nav>
+    </header>
+    <component-setting id="applyDarkMode" title="Dark mode" description="Light or dark mode" icons="light_mode,dark_mode">
+    </component-setting>
+    <component-setting id="hideElementsWhenTiming" title="Hide all elements when timing"
+      description="Only the timer will be visible" icons="close,done">
+    </component-setting>
+    <component-setting id="hideTimeWhileSolving" title="Hide time while solving"
+      description="The timer will display your time when you finish" icons="close,done">
+    </component-setting>
+    <div class="small-divider"></div>
+    <div class="row"><h5 class="small title">Themes</h5></div>
+    <component-theme-picker></component-theme-picker>
+  </div>
+  <script src="libraries/vanilla-router/vanilla-router.js"></script>
+  <script type="module" src="libraries/beercss/beer.min.js"></script>
+  <script type="module" src="libraries/beercss/material-dynamic-colors.min.js"></script>
+  <script type="module" src="src/Component/Setting.js"></script>
+  <script type="module" src="src/Component/Scramble.js"></script>
+  <script type="module" src="src/Component/ScrambleVisual.js"></script>
+  <script type="module" src="src/Component/ThemePicker.js"></script>
+  <script type="module" src="src/Component/Timer.js"></script>
+  <script type="module">
+    import App from "./src/App.js";
+
+    const app = new App(
+      document.querySelector("main")
+    );
+    app.bootstrap();
+  </script>
+</body>
+
+</html>
