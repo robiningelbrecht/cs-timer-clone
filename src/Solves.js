@@ -5,6 +5,13 @@ export default class Solves {
     return Solves.__get(CACHE_KEY);
   };
 
+  static getSolveTimes = (limit) => {
+    return Solves.get()
+      .sort((a, b) => b.solvedOn - a.solvedOn)
+      .slice(0, limit)
+      .map((solve)=> solve.timeInMilliseconds);
+  };
+
   static add = (solve) => {
     const sloves = Solves.__get(CACHE_KEY);
 

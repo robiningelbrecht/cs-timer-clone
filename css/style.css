@@ -15,7 +15,8 @@ body {
 body.fullscreen nav,
 body.fullscreen header,
 body.fullscreen main component-scramble,
-body.fullscreen main component-scramble-visual {
+body.fullscreen main component-scramble-visual,
+body.fullscreen main component-average-of {
     display: none;
 }
 

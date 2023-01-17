@@ -26,6 +26,9 @@ export default class TimerScreen {
       timerElement.setAttribute("hide-time", "");
     }
 
+    const averageOfElement = document.createElement("component-average-of");
+    averageOfElement.setAttribute('solves', Solves.getSolveTimes(12).join(','));
+
     document.addEventListener(Event.settingWasUpdated, (e) => {
       if (e.detail.id === HIDE_TIME_WHILE_SOLVING) {
         e.detail.isChecked
@@ -77,12 +80,15 @@ export default class TimerScreen {
 
         const randomScramble = Utils.randomScramble(20);
         scrambleElement.setAttribute("algorithm", randomScramble);
+
+        averageOfElement.setAttribute('solves', Solves.getSolveTimes(12).join(','));
       }
     });
 
     const el = document.createElement("div");
     el.appendChild(scrambleElement);
     el.appendChild(timerElement);
+    el.appendChild(averageOfElement);
 
     return el;
   };
