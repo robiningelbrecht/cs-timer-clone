@@ -47,4 +47,29 @@ export default class Utils {
       ).toString(16)
     );
   };
+
+  static formatElapsedTime = (elapsedTime) => {
+    const milliseconds = parseInt(elapsedTime % 1000);
+    const seconds = parseInt((elapsedTime / 1000) % 60);
+    const minutes = parseInt((elapsedTime / (1000 * 60)) % 60);
+    const hours = parseInt((elapsedTime / (1000 * 60 * 60)) % 24);
+
+
+    const parts =  {
+      milliseconds:  "." + milliseconds.toString().padStart(3, "0"),
+      seconds: seconds < 10 && minutes > 0 ? "0" + seconds : seconds,
+      minutes: null,
+      hours: null
+    };
+
+    if (minutes > 0) {
+      parts.minutes = minutes < 10 && hours > 0 ? "0" + minutes + ":" : minutes + ":";
+    }
+
+    if (hours > 0) {
+      parts.hours = hours + ":";
+    }
+
+    return parts;
+  };
 }

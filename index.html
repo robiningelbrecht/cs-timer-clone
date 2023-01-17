@@ -24,10 +24,10 @@
       <i>list_alt</i>
       <div>Solves</div>
     </a>
-    <a href="/#stats">
+    <!--<a href="/#stats">
       <i>insights</i>
       <div>Stats</div>
-    </a>
+    </a>-->
     <a data-ui="#settings">
       <i>settings</i>
       <div>Settings</div>
@@ -42,10 +42,10 @@
       <i>list_alt</i>
       <div>Solves</div>
     </a>
-    <a href="/#stats">
+    <!--<a href="/#stats">
       <i>insights</i>
       <div>Stats</div>
-    </a>
+    </a>-->
     <a data-ui="#settings">
       <i>settings</i>
       <div>Settings</div>
@@ -72,7 +72,8 @@
         <h5 class="max">Settings</h5>
       </nav>
     </header>
-    <component-setting id="applyDarkMode" title="Dark mode" description="Light or dark mode" icons="light_mode,dark_mode">
+    <component-setting id="applyDarkMode" title="Dark mode" description="Light or dark mode"
+      icons="light_mode,dark_mode">
     </component-setting>
     <component-setting id="hideElementsWhenTiming" title="Hide all elements when timing"
       description="Only the timer will be visible" icons="close,done">
@@ -81,8 +82,13 @@
       description="The timer will display your time when you finish" icons="close,done">
     </component-setting>
     <div class="small-divider"></div>
-    <div class="row"><h5 class="small title">Themes</h5></div>
+    <div class="row">
+      <h5 class="small title">Themes</h5>
+    </div>
     <component-theme-picker></component-theme-picker>
+  </div>
+  <div class="modal transparent max align-center" id="solve">
+    <div class="content inverse-surface"></div>
   </div>
   <script src="libraries/vanilla-router/vanilla-router.js"></script>
   <script type="module" src="libraries/beercss/beer.min.js"></script>
@@ -90,6 +96,7 @@
   <script type="module" src="src/Component/Setting.js"></script>
   <script type="module" src="src/Component/Scramble.js"></script>
   <script type="module" src="src/Component/ScrambleVisual.js"></script>
+  <script type="module" src="src/Component/Solve.js"></script>
   <script type="module" src="src/Component/ThemePicker.js"></script>
   <script type="module" src="src/Component/Timer.js"></script>
   <script type="module">

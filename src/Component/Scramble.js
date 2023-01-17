@@ -13,7 +13,7 @@ template.innerHTML = `
 }
 </style>
 <div class="scramble">
-    <div class="algorithm"></div>
+    <div class="algorithm capitalize"></div>
     <button class="transparent"><i>autorenew</i></button>
 </div>
 `;

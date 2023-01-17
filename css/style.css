@@ -8,7 +8,7 @@
 }
 
 body {
-    overflow: hidden; 
+    overflow: hidden;
     font-size: 1em;
 }
 
@@ -19,13 +19,52 @@ body.fullscreen main component-scramble-visual {
     display: none;
 }
 
-main.responsive.timer-screen{
+main.responsive.timer-screen {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
-main.responsive.solves-screen{
+main.responsive.solves-screen {
     padding-top: 5rem;
+}
+
+main.responsive.solves-screen .grid {
+    overflow-y: scroll;
+    max-height: 100vh;
+}
+
+#solve.modal {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#solve.modal>div {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+
+#solve.modal>div .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#solve.modal>div .header .time {
+    font-weight: bold;
+}
+
+#solve.modal>div .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#solve.modal>div .content .scramble {
+    display: flex;
+    gap: 0.5rem;
 }

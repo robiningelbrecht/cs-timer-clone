@@ -1,3 +1,5 @@
+import Utils from "../Utils.js";
+
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
@@ -131,24 +133,12 @@ export class Timer extends HTMLElement {
   };
 
   _setTimerValues = (elapsedTime) => {
-    const milliseconds = parseInt(elapsedTime % 1000);
-    const seconds = parseInt((elapsedTime / 1000) % 60);
-    const minutes = parseInt((elapsedTime / (1000 * 60)) % 60);
-    const hours = parseInt((elapsedTime / (1000 * 60 * 60)) % 24);
+    const formattedTime = Utils.formatElapsedTime(elapsedTime);
 
-    this.$milliseconds.innerHTML =
-      "." + milliseconds.toString().padStart(3, "0");
-    this.$seconds.innerHTML =
-      seconds < 10 && minutes > 0 ? "0" + seconds : seconds;
-
-    if (minutes > 0) {
-      this.$minutes.innerHTML =
-        minutes < 10 && hours > 0 ? "0" + minutes + ":" : minutes + ":";
-    }
-
-    if (hours > 0) {
-      this.$$hours.innerHTML = hours + ":";
-    }
+    this.$milliseconds.innerHTML = formattedTime.milliseconds;
+    this.$seconds.innerHTML = formattedTime.seconds;
+    this.$minutes.innerHTML = formattedTime.minutes;
+    this.$$hours.innerHTML = formattedTime.hours;
   };
 }
 
